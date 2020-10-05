@@ -5,35 +5,54 @@ var button = document.getElementById('enter');
 
 async function getData(){
     table.innerHTML = '';
-    var data = await fetch('金庸小說集合.txt')
-    .then(res => res.text())
-    .then(data => {
-        d = regex(char_num, keyword, data)
-        d.forEach(s => {
-          addChild(s)  
-        });
-    })
-    .catch(e=>{
-        var row = document.createElement('li')
-        var s = document.createTextNode('查無此詞')
-        row.appendChild(s)
-        table.appendChild(row) 
-    })
+    table.style.border = 'None';
+    if (keyword.value.length>0){
+        console.log(char_num.value)
+        var data = await fetch('金庸小說集合.txt')
+        .then(res => res.text())
+        .then(data => {
+            d = regex(data)
+            d.forEach(s => {
+                addChild(s)  
+            });
+            active()
+        })
+        .catch(e=>{
+            var row = document.createElement('li')
+            var s = document.createTextNode('查無此詞')
+            row.appendChild(s)
+            table.appendChild(row) 
+            active()
+        })
+    }   else{
+            var row = document.createElement('li')
+            var s = document.createTextNode('請輸入關鍵字')
+            row.appendChild(s)
+            table.appendChild(row) 
+            active()
+    }
+    
 }
 
 function addChild(sentense){
     var row = document.createElement('li')
     var s = document.createTextNode(sentense)
+
     row.appendChild(s)
+    row.innerHTML = row.innerHTML.replace(keyword.value, `<mark>${keyword.value}</mark>`)
     table.appendChild(row)
 }
 
-function regex(char_num, keyword, data){
+function regex(data){
     var str_patt = `.{${char_num.value}}${keyword.value}.{${char_num.value}}`
     var patt = new RegExp(str_patt, 'g');
     var results = data.match(patt);
     console.log(patt)
     return results;
+}
+
+function active(){
+    table.style.border = '5px solid green';
 }
 
 button.addEventListener('click', function(){

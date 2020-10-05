@@ -40,9 +40,8 @@ header {
     justify-content: center;
 }
 
-.result{
+.result {
     margin: 50px;
-    border: 5px solid green;
     color: white ;
     margin-left: auto;
     margin-right:auto;
