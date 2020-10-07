@@ -15,21 +15,18 @@ async function getData(){
             d.forEach(s => {
                 addChild(s)  
             });
-            active()
         })
         .catch(e=>{
             var row = document.createElement('li')
             var s = document.createTextNode('查無此詞')
             row.appendChild(s)
             table.appendChild(row) 
-            active()
         })
     }   else{
             var row = document.createElement('li')
             var s = document.createTextNode('請輸入關鍵字')
             row.appendChild(s)
             table.appendChild(row) 
-            active()
     }
     
 }
@@ -49,10 +46,6 @@ function regex(data){
     var results = data.match(patt);
     console.log(patt)
     return results;
-}
-
-function active(){
-    
 }
 
 button.addEventListener('click', function(){
