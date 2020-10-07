@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiction_Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,24 +15,26 @@
     <div class='searchField'>
         <i class="fas fa-search fa-5x search-icon"></i>
         <div class='searchInfo'>
-            <div >
-                <div class='center'>
+            <div class='searchInfo__container'>
+                <div class='searchInfo__item'>
                     <label for='number_lr' class='col-25'>前後字數:</label>
                     <input id='number_lr' class='number_lr col-75' type='number' value=10>
                 </div>
-                <div class='center'>
+                <div class='searchInfo__item'>
                     <label for='chars' class='col-25'>關鍵字:</label>
                     <input id='chars' class='chars col-75' type='text'>
                 </div>
-                <div class='center'>
-                    <button id='enter' class='center'>查看</button>
+                <div class='searchInfo__btn'>
+                    <button id='enter' class='center enter'>查看</button>
                 </div>
                 
             </div>
         </div>
     </div>
-    <table class='result active'>
-    </table>
+    <div class="result-container">
+        <ul class='result active'>
+        </ul>
+    </div>
     <!-- Script -->
     <script src='script.js'></script>
 </body>

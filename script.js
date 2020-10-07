@@ -52,7 +52,7 @@ function regex(data){
 }
 
 function active(){
-    table.style.border = '5px solid green';
+    
 }
 
 button.addEventListener('click', function(){
