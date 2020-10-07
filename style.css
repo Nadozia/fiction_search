@@ -10,46 +10,112 @@ html {
 body {
     margin:0;
     min-height:100vh;
-    background: black;
+    background-color: rgba(63,63,191, 0.1);
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 header {
-    background: rgb(126, 32, 32);
+    box-shadow: 0px 8px 19px -15px rgba(0,0,0,0.75);
+    background:#6767BB;
     text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
 }
 
 .searchField{
     margin-top: 50px;
-    margin: 10 auto;
-    padding:50;
+    padding:20px;
     position: relative;    
     border: 3px solid white;
-    background: blue;
+    background: white;
     margin-left: auto;
     margin-right: auto;
     width:50%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 19px -10px rgba(0,0,0,0.75);
 }
 
 .search-icon{
     text-align: center; 
     width: 100%;
+
+    color:#6767BB;
 }
 
 .searchInfo{
+    margin-top: 20px;
     display:flex;
     justify-content: center;
 }
 
+.searchInfo__item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.searchInfo__item + .searchInfo__item {
+    margin-bottom: 25px;
+}
+
+.searchInfo__item label {
+    color: rgb(131, 125, 125);
+    font-weight: 400;
+}
+
+.searchInfo__item input {
+    border-radius: 2px;
+    border-color: rgb(131, 125, 125);
+    border-width: 1px;
+}
+
+.searchInfo__btn {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.searchInfo__container{
+    width: 320px;
+}
+
+.result-container {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    width: 50%;
+    padding: 25px 25px;
+    border-top: 5px solid #6767BB;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 0px 19px -10px rgba(0,0,0,0.75);
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    max-height: 800px;
+}
+
 .result {
-    margin: 50px;
-    color: white ;
+    margin: 25px 50px 50px 50px;
+    color: rgb(131, 125, 125); ;
     margin-left: auto;
     margin-right:auto;
-    width:50%;
+    /* width:50%; */
+    list-style: none;
 }
 
 li{
-    padding:5px;
+    padding:5px 35px;
+}
+
+li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #6767BB; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 2em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
 input{
@@ -57,18 +123,22 @@ input{
     width:150px;
 }
 
+.enter {
+    padding: 10px 55px;
+    background-color: #6767BB;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    box-shadow: 0px 0px 11px -6px rgba(0,0,0,0.75);
+    
+}
+
 .col-25{
-    float:center;
     width:25%;
     margin-top: 6px;
 }
 
 .col-75{
-    float:center;
     width:75%;
     margin-top: 6px;
-}
-
-.center{
-    text-align: center;
 }
